@@ -10,6 +10,12 @@ from keras.optimizers import Adam
 import sklearn.metrics as metrics
 K.set_image_data_format('channels_first')
 
+# Do it with GPU
+# import tensorflow as tf
+# sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+# # Check that there is an output
+# from keras import backend as k
+# k.tensorflow_backend._get_available_gpus()
 
 def split_in_seqs(data, subdivs):
     """
