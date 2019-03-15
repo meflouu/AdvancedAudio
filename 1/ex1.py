@@ -85,6 +85,15 @@ def extract_feature(_audio_filename):
         frame_cnt = frame_cnt + 1
     return _y, _zcr, _fft_en, _mbe
 
+############# 5 DISCUSSION ##################
+#
+# The characteristics of the ZCR curve with respect to the audio signal content: ZCR represent the signal changes which is in audio term the frequency of the signal.
+# In the first 40 frames, there is an almost perfectly constant number of zero crossings and that is because if you listen to the ex1.wav the beep output in the first 40 frames is not noisy. Same thing happens in the frames 70-120 because there is a dominant frequency.
+# The different between the first 40 frames and the 70-120 frames is that the later has higher frequencies because the pitch is different.
+# However, between frames 40 to 70, by listening to the audio we notice the signal changes completely and it is quite noisy, and there is no dominant frequency so the ZCR curve is volatile and the numbers of crossings is higher.
+#
+#############################################
+
 
 audio_filename = 'ex1.wav'
 y, zcr, fft_en, mbe = extract_feature(audio_filename)
