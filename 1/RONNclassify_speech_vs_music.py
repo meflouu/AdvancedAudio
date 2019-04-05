@@ -7,7 +7,7 @@ sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 # Check that there is an output
 from keras import backend as K
 K.tensorflow_backend._get_available_gpus()
-from keras.layers import Conv2D, MaxPooling2D, Input, GRU, TimeDistributed, Flatten
+from keras.layers import Conv2D, MaxPooling2D, Input, GRU, TimeDistributed, Flatten, SimpleRNN
 from keras.layers.core import Dense, Activation, Dropout, Reshape, Permute
 from keras.layers.normalization import BatchNormalization
 from keras.models import Model, load_model, Sequential
@@ -235,8 +235,8 @@ def test(_window_length, _nb_mel_bands, _nb_frames, test_file_index):
 # -------------------------------------------------------------------
 
 # location of data. #TODO: UPDATE ACCORDING TO YOUR SYSTEM PATH
-__speech_audio_folder = 'C:\\Users\\mital\\music_speech\\speech_wav'
-__music_audio_folder = 'C:\\Users\\mital\\music_speech\\music_wav'
+__speech_audio_folder = '/Users/amir/Desktop/4thPeriod/AdvancedAudio/Ex/1/data/speech_wav'
+__music_audio_folder = '/Users/amir/Desktop/4thPeriod/AdvancedAudio/Ex/1/data/music_wav'
 
 window_length = 2048
 nb_mel_bands = 32
@@ -249,5 +249,5 @@ train(window_length, nb_mel_bands, nb_frames)
 # results for a recording, note the 'Index' number from the CSV file for the respective audio you want to analyze and
 # use it below to visualize the outputs.
 
-#file_index_in_csv_file = 12
-#test(window_length, nb_mel_bands, nb_frames, file_index_in_csv_file)
+file_index_in_csv_file = 12
+test(window_length, nb_mel_bands, nb_frames, file_index_in_csv_file)
